@@ -1,7 +1,7 @@
 from flask import Flask
 
 # Initialize the app
-app = Flask(__name__, instance_relative_config=True, static_url_path='/static')
+app = Flask(__name__, instance_relative_config=True)
 
 
 # Load the views
