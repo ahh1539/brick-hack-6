@@ -37,7 +37,7 @@ def login():
     mysql = MySQL()
     mysql.init_app(app)
     conn = mysql.connect()
-    query = ("""Select * From items""")
+    query = ("""Select * From users""")
     cursor = conn.cursor()
     cursor.execute(query)
     res = cursor.fetchall()
@@ -47,6 +47,7 @@ def login():
         # if request.form['username'] != 'admin' or request.form['password'] != 'admin':
         #     error = "Invalid Credentials"
         for item in res:
+            print(item[1])
             if item[1] == request.form['username'] and item[2] == request.form['password']:
                 return redirect(url_for('index'))
         error = "Invalid Credentials"
