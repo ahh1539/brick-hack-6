@@ -1,8 +1,5 @@
-<link href="/app/style/login.css" rel="stylesheet">
-
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-<link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 
 
 {% block title %}{% endblock %}
@@ -24,14 +21,22 @@
             <div class="form-group">
               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="border:1px solid #f76902">
             </div>
-
-            <button type="submit" class="shadow-lg btn btn-primary btn-lg" style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Login</button>
-            <button type="submit" class="shadow-lg btn btn-primary btn-lg " style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Sign Up</button>
         </form>
+        <div>
+            <button type="submit" class="shadow-lg btn btn-primary btn-lg" onclick='loadMessage()' style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Login</button>
+            <button type="submit" class="shadow-lg btn btn-primary btn-lg " style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Sign Up</button>
+        </div>
       </div>
       <br>
     </div>
 </div>
+
+
+<script>
+    function loadMessage() {
+        console.log("{{ clever_function() }}")
+    }
+</script>
 
 
 {% endblock %}

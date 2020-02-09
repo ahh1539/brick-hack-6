@@ -20,3 +20,4 @@ def login():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     return render_template("signup.html")
+
