@@ -6,7 +6,19 @@ from app import app
 
 @app.route('/home', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    app = Flask(__name__)
+    app.config['MYSQL_DATABASE_USER'] = 'root'
+    app.config['MYSQL_DATABASE_PASSWORD'] = 'Lads69'
+    app.config['MYSQL_DATABASE_HOST'] = '35.243.163.114'
+    app.config['MYSQL_DATABASE_DB'] = 'brick'
+    mysql = MySQL()
+    mysql.init_app(app)
+    conn = mysql.connect()
+    query = ("""Select * From items""")
+    cursor = conn.cursor()
+    cursor.execute(query)
+    res = cursor.fetchall()
+    return render_template("index.html", res=res)
 
 
 @app.route('/about')

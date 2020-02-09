@@ -13,6 +13,7 @@
 <!-- <img src="https://i.imgur.com/m3FalyO.png" /> -->
 <!-- <img src="{{ url_for('static', filename='TigerPlace_Logo.png') }}" height="400px" width="400px"/> -->
 
+
 <div class="container" style="display: contents;">
   <div class="jumbotron" style="background-color:#f76902; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; border-top-right-radius: 0px; border-top-left-radius: 0px;">
     <div style="text-align: center;">
@@ -24,102 +25,29 @@
       <a href="#"><img class="search-icon" src="https://imgur.com/br7tIk2.png"></a>
     </form>
 </div>
-
 <br>
+
+
 <div id="yeetitems">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <figure class="snip1527">
-          <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
-          <figcaption>
-            <div class="date"><span class="month">$10</span></div>
-            <h3>The World Ended Yesterday</h3>
-            <p>
-              You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-            </p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-        <!-- <div class="thumbnail" style="">
-          <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" />
-          <div class="caption">
-            <h3>Thumbnail lnnnnnabel</h3>
-            <p>...</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-          </div>
-        </div> -->
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <figure class="snip1527">
-          <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
-          <figcaption>
-            <div class="date"><span class="month">$10</span></div>
-            <h3>The World Ended Yesterday</h3>
-            <p>
-              You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-            </p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <figure class="snip1527">
-          <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
-          <figcaption>
-            <div class="date"><span class="month">$10</span></div>
-            <h3>The World Ended Yesterday</h3>
-            <p>
-              You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-            </p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <figure class="snip1527">
-          <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
-          <figcaption>
-            <div class="date"><span class="month">$10</span></div>
-            <h3>The World Ended Yesterday</h3>
-            <p>
-              You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-            </p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <figure class="snip1527">
-          <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
-          <figcaption>
-            <div class="date"><span class="month">$10</span></div>
-            <h3>The World Ended Yesterday</h3>
-            <p>
-              You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-            </p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <figure class="snip1527">
-          <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
-          <figcaption>
-            <div class="date"><span class="month">$10</span></div>
-            <h3>The World Ended Yesterday</h3>
-            <p>
-              You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
-            </p>
-          </figcaption>
-          <a href="#"></a>
-        </figure>
-      </div>
+      {% if res %}
+        {% for item in res %}
+        <div class="col-sm-6 col-md-4">
+          <figure class="snip1527" style="box-shadow: 2px 2px 3px 3px #CCC;">
+            <div class="image"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1561489855-square-1494869964-ikea-ektorp-sofa-cover-1561489824.jpg" alt="pr-sample23" /></div>
+            <figcaption>
+              <div class="date"><span class="month">${{ item[2] }}</span></div>
+              <h3>{{ item[1] }}</h3>
+              <p>
+                {{ item[3] }}
+              </p>
+            </figcaption>
+            <a href="#"></a>
+          </figure>
+        </div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>
