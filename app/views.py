@@ -9,14 +9,20 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/about', methods=['GET', 'POST'])
+@app.route('/about')
 def about():
     return render_template("about.html")
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = "Invalid Credentials"
+        else:
+            return redirect(url_for('index'))
+    return render_template("login.html", error=error)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -45,3 +51,7 @@ def sell_item():
     cursor.execute(query, (Item_Name,Price,Description))
     conn.commit()
     return render_template("created.html")
+
+@app.route('/expanded-card', methods=['GET', 'POST'])
+def expanded_card():
+    return render_template("card-expanded.html")
