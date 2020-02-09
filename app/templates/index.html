@@ -2,6 +2,9 @@
 {% block title %}Home{% endblock %}
 {% block body %}
 
+<head>
+  <link rel="stylesheet" href="https://people.rit.edu/~dmb4086/TigerX/main.css">
+</head>
 <!-- <img src="https://i.imgur.com/m3FalyO.png" /> -->
 <!-- <img src="{{ url_for('static', filename='TigerPlace_Logo.png') }}" height="400px" width="400px"/> -->
 
@@ -11,25 +14,10 @@
       <img src="https://i.imgur.com/m3FalyO.png" />
     </div>
     <br>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn" style="background-color: #780000;">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-    </div>
-    <div class="row" style="padding-top: 10px; ">
-      <div class="col-md-1">
-        <button class="btn btn-default"> Books </button>
-      </div>
-      <div class="col-md-1">
-        <button class="btn btn-default"> Furniture </button>
-      </div>
-      <div class="col-md-1">
-        <button class="btn btn-default"> Electronics </button>
-      </div>
-    </div>
-
-  </div>
+    <form class="search-container">
+      <input type="text" id="search-bar" placeholder="Search">
+      <a href="#"><img class="search-icon" src="https://imgur.com/br7tIk2.png"></a>
+    </form>
 </div>
 
 <br>
