@@ -27,3 +27,7 @@ def login():
 def signup():
     return render_template("signup.html")
 
+
+@app.route('/expanded-card', methods=['GET', 'POST'])
+def expanded_card():
+    return render_template("card-expanded.html")
