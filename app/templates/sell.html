@@ -17,18 +17,21 @@
     </div>
     <div class="jumbotron" style="border-radius: 20px;">
       <div style="text-align: center;">
-        <form>
-            <div class="form-group" style="padding-top: 10px;">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="border:1px solid #f76902">
+        <form action="/action_page.php">
+            <div class="form-group">
+              <input type="Item-name" class="form-control" id="exampleItemName" placeholder="Item Name" style="border:1px solid #f76902">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="border:1px solid #f76902">
+              <input type="cost" class="form-control" id="exampleCost" aria-describedby="cost" placeholder="Price" style="border:1px solid #f76902">
+            </div>
+            <div class="form-group">
+              <input type="description" class="form-control" id="exampleDescription" placeholder="Description" style="border:1px solid #f76902">
+            </div>
+            <div class="form-group">
+              <input type="file" name="pic" accept="image/*">
+              <input type="submit">
             </div>
         </form>
-        <div class="separate">
-            <button type="submit" class="btn-2-dev btn-2-dev--a mbm">Login</button>
-            <button type="submit" class="btn-2-dev btn-2-dev--a mbm">Sign Up</button>
-        </div>
       </div>
       <br>
     </div>

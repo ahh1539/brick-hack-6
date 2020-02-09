@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import 
 
 # Initialize the app
 app = Flask(__name__, instance_relative_config=True)
@@ -13,7 +13,7 @@ from app import views
 # Load the config file
 app.config.from_object('config')
 
-def clever_function():
-    return u'HELLO'
+# def clever_function():
+#     return u'HELLO'
 
-app.jinja_env.globals.update(clever_function=clever_function)
+# app.jinja_env.globals.update(clever_function=clever_function)

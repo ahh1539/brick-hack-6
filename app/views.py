@@ -21,3 +21,6 @@ def login():
 def signup():
     return render_template("signup.html")
 
+@app.route('/sell', methods=['GET', 'POST'])
+def sell():
+    return render_template("sell.html")
