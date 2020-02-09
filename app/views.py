@@ -65,10 +65,10 @@ def signup_confirm():
     app.config['MYSQL_DATABASE_DB'] = 'brick'
     mysql = MySQL()
     mysql.init_app(app)
-    Full_Name = request.form['Full_Name']
     Username = request.form['Username']
-    Phone_Number = request.form['Phone_Number']
     Password = request.form['Password']
+    Phone_Number = request.form['Phone_Number']
+    Full_Name = request.form['Full_Name']
     conn = mysql.connect()
     cursor = conn.cursor()
     query = ("""INSERT INTO users (username,password,phone_number,full_name) VALUES(%s,%s,%s,%s)""")
