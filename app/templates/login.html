@@ -1,5 +1,3 @@
-<link href="/app/style/login.css" rel="stylesheet">
-
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -8,7 +6,7 @@
 {% block title %}{% endblock %}
 <body style="background-color: #f76902;"></body>
 <div class="shadow-lg" style="padding-left: 15px; padding-top: 15px;">
-    <a href="/"class="btn btn-default btn-lg">Home</a></li>
+    <a href="/home"class="btn btn-default btn-lg">Home</a></li>
 </div>
 {% block body %}
     <div class="shadow-lg container" style="padding-top: 100px; width: 45vw; margin: auto;">
@@ -17,22 +15,29 @@
     </div>
     <div class="jumbotron" style="border-radius: 20px;">
       <div style="text-align: center;">
-        <form>
-            <div class="form-group" style="padding-top: 10px;">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="border:1px solid #f76902">
+
+        <form action="" method="POST">
+            <div class="form-group" style="padding-top: 10px;"></div>
+            <div style="padding-top: 8px;">
+              <input type="username" name="username" class="form-control" id="exampleInputEmail1" value="{{request.form.username}}" placeholder="Username" style="border:1px solid #f76902">
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="border:1px solid #f76902">
+            <div style="padding-top: 8px;">
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="{{request.form.password}}" placeholder="Password" style="border:1px solid #f76902">
+            </div>
+            <div style="padding-top: 8px;">
+              <button type="submit" class="shadow-lg btn btn-primary btn-lg" style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Login</button>
+              <button type="submit" class="shadow-lg btn btn-primary btn-lg " style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Sign Up</button>
             </div>
         </form>
-        <div>
-            <button type="submit" class="shadow-lg btn btn-primary btn-lg" onclick='loadMessage()' style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Login</button>
-            <button type="submit" class="shadow-lg btn btn-primary btn-lg " style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Sign Up</button>
-        </div>
+        {% if error %}
+          <p class="error"><strong>Error: {{ error }}</strong></p>
+        {% endif %}
       </div>
       <br>
     </div>
 </div>
+
+
 
 
 <script>
