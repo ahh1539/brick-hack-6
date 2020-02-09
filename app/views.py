@@ -58,4 +58,20 @@ def expanded_card():
 
 @app.route('/signup-confirmation', methods=['GET', 'POST'])
 def signup_confirm():
+    app = Flask(__name__)
+    app.config['MYSQL_DATABASE_USER'] = 'root'
+    app.config['MYSQL_DATABASE_PASSWORD'] = 'Lads69'
+    app.config['MYSQL_DATABASE_HOST'] = '35.243.163.114'
+    app.config['MYSQL_DATABASE_DB'] = 'brick'
+    mysql = MySQL()
+    mysql.init_app(app)
+    Full_Name = request.form['Full_Name']
+    Username = request.form['Username']
+    Phone_Number = request.form['Phone_Number']
+    Password = request.form['Password']
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    query = ("""INSERT INTO users (username,password,phone_number,full_name) VALUES(%s,%s,%s,%s)""")
+    cursor.execute(query, (Username,Password,Phone_Number,Full_Name))
+    conn.commit()
     return render_template("sign-up-confirm.html")
