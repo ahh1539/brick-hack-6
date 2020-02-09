@@ -56,8 +56,8 @@ def sell_item():
 def expanded_card():
     return render_template("card-expanded.html")
 
-@app.route('/signup-confirmation', methods=['GET', 'POST'])
-def signup_confirm():
+@app.route('/signup_confirmation', methods=['GET', 'POST'])
+def signup_confirmation():
     app = Flask(__name__)
     app.config['MYSQL_DATABASE_USER'] = 'root'
     app.config['MYSQL_DATABASE_PASSWORD'] = 'Lads69'
