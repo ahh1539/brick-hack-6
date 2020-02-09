@@ -55,3 +55,7 @@ def sell_item():
 @app.route('/expanded-card', methods=['GET', 'POST'])
 def expanded_card():
     return render_template("card-expanded.html")
+
+@app.route('/signup-confirmation', methods=['GET', 'POST'])
+def signup_confirm():
+    return render_template("sign-up-confirm.html")
