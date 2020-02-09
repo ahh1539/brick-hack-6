@@ -28,12 +28,30 @@ def about():
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
+
+    app = Flask(__name__)
+    app.config['MYSQL_DATABASE_USER'] = 'root'
+    app.config['MYSQL_DATABASE_PASSWORD'] = 'Lads69'
+    app.config['MYSQL_DATABASE_HOST'] = '35.243.163.114'
+    app.config['MYSQL_DATABASE_DB'] = 'brick'
+    mysql = MySQL()
+    mysql.init_app(app)
+    conn = mysql.connect()
+    query = ("""Select * From items""")
+    cursor = conn.cursor()
+    cursor.execute(query)
+    res = cursor.fetchall()
+
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = "Invalid Credentials"
-        else:
-            return redirect(url_for('index'))
+        # if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+        #     error = "Invalid Credentials"
+        for item in res:
+            if item[1] == request.form['username'] and item[2] == request.form['password']:
+                return redirect(url_for('index'))
+        error = "Invalid Credentials"
+        # else:
+        #     return redirect(url_for('index'))
     return render_template("login.html", error=error)
 
 
