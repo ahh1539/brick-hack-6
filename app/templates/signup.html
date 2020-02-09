@@ -17,7 +17,7 @@
     </div>
     <div class="jumbotron" style="border-radius: 20px;">
       <div style="text-align: center;">
-        <form>
+        <form method="post" action="/signup_confirmation">
             <div class="form-group">
               <input type="full-name" class="form-control" name="Full_Name" placeholder="Full Name" style="border:1px solid #f76902">
             </div>
@@ -25,15 +25,16 @@
               <input type="email" class="form-control" name="Username" aria-describedby="emailHelp" placeholder="Enter email" style="border:1px solid #f76902">
             </div>
             <div class="form-group">
-              <input type="phone-number" class="form-control" id="Phone_Number" placeholder="Phone Number" style="border:1px solid #f76902">
+              <input type="phone-number" class="form-control" name="Phone_Number" placeholder="Phone Number" style="border:1px solid #f76902">
+            </div>
+            
+            <div class="form-group">
+              <input type="password" class="form-control" name="Password" placeholder="Password" style="border:1px solid #f76902">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="Password" placeholder="Password" style="border:1px solid #f76902">
+              <input type="submit" value="Submit" class="btn-2-dev btn-2-dev--a mbm">
             </div>
         </form>
-        <div class="separate">
-          <a href="/signup-confirmation"class="Loginbtn Loginbtn--a mbm" style="margin-top: 2vw;">Submit</a>
-        </div>
       </div>
       <br>
     </div>
