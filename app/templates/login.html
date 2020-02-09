@@ -1,3 +1,5 @@
+<link href="https://people.rit.edu/~dmb4086/TigerX/main.css" rel="stylesheet">
+
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -6,7 +8,7 @@
 {% block title %}{% endblock %}
 <body style="background-color: #f76902;"></body>
 <div class="shadow-lg" style="padding-left: 15px; padding-top: 15px;">
-    <a href="/home"class="btn btn-default btn-lg">Home</a></li>
+<a href="/"class="Loginbtn Loginbtn--a mbm">Home</a>
 </div>
 {% block body %}
     <div class="shadow-lg container" style="padding-top: 100px; width: 45vw; margin: auto;">
@@ -29,6 +31,10 @@
               <button type="submit" class="shadow-lg btn btn-primary btn-lg " style="border-style: hidden; background-color: #f76902; padding-right: 20px; padding-left: 20px;">Sign Up</button>
             </div>
         </form>
+        <div class="separate">
+            <button type="submit" class="btn-2-dev btn-2-dev--a mbm">Login</button>
+            <button type="submit" class="btn-2-dev btn-2-dev--a mbm">Sign Up</button>
+        </div>
         {% if error %}
           <p class="error"><strong>Error: {{ error }}</strong></p>
         {% endif %}
@@ -37,13 +43,10 @@
     </div>
 </div>
 
-
-
 <script>
     function loadMessage() {
         console.log("{{ clever_function() }}")
     }
 </script>
-
 
 {% endblock %}
